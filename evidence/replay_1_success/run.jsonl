@@ -1,0 +1,30 @@
+{"ts": 1789549243.0313148, "event": "run_started", "kind": "replay", "run_id": "replay_20260916T090043_9f89e6"}
+{"ts": 1789549243.5418477, "event": "replay_started", "artifact_id": "cap_407d958d5d", "version": 1, "input_values": {"member_id": "12345", "account_type": "Youth Savings", "deposit": "150", "OPERATOR_USERNAME": "operator", "OPERATOR_PASSWORD": "<redacted:ec6e1c25>"}}
+{"ts": 1789549243.580736, "event": "step_start", "step_id": "s0", "action": "type"}
+{"ts": 1789549243.6689625, "event": "step_ok", "step_id": "s0"}
+{"ts": 1789549243.6690261, "event": "step_start", "step_id": "s1", "action": "type"}
+{"ts": 1789549243.6936858, "event": "step_ok", "step_id": "s1"}
+{"ts": 1789549243.6937277, "event": "step_start", "step_id": "s2", "action": "click"}
+{"ts": 1789549243.7890403, "event": "checkpoint_check", "step_id": "s2", "passed": true, "observed": "http://127.0.0.1:5055/members/search"}
+{"ts": 1789549243.8033848, "event": "step_ok", "step_id": "s2"}
+{"ts": 1789549243.8034232, "event": "step_start", "step_id": "s3", "action": "type"}
+{"ts": 1789549243.8351927, "event": "step_ok", "step_id": "s3"}
+{"ts": 1789549243.8352315, "event": "step_start", "step_id": "s4", "action": "click"}
+{"ts": 1789549243.9201114, "event": "checkpoint_check", "step_id": "s4", "passed": true, "observed": "http://127.0.0.1:5055/members/12345"}
+{"ts": 1789549243.9427447, "event": "step_ok", "step_id": "s4"}
+{"ts": 1789549243.942787, "event": "step_start", "step_id": "s5", "action": "click"}
+{"ts": 1789549244.008012, "event": "checkpoint_check", "step_id": "s5", "passed": true, "observed": "http://127.0.0.1:5055/members/12345/subaccounts/new"}
+{"ts": 1789549244.025421, "event": "step_ok", "step_id": "s5"}
+{"ts": 1789549244.0254598, "event": "step_start", "step_id": "s6", "action": "select"}
+{"ts": 1789549244.035463, "event": "step_ok", "step_id": "s6"}
+{"ts": 1789549244.0355392, "event": "step_start", "step_id": "s7", "action": "type"}
+{"ts": 1789549244.0656095, "event": "step_ok", "step_id": "s7"}
+{"ts": 1789549244.0656495, "event": "step_start", "step_id": "s8", "action": "click"}
+{"ts": 1789549244.1667235, "event": "step_ok", "step_id": "s8"}
+{"ts": 1789549244.1667671, "event": "step_start", "step_id": "s9", "action": "click"}
+{"ts": 1789549244.247911, "event": "checkpoint_check", "step_id": "s9", "passed": true, "observed": "http://127.0.0.1:5055/members/12345/subaccounts/confirm"}
+{"ts": 1789549244.2618868, "event": "step_ok", "step_id": "s9"}
+{"ts": 1789549244.261925, "event": "step_start", "step_id": "s10", "action": "extract"}
+{"ts": 1789549244.288173, "event": "step_ok", "step_id": "s10"}
+{"ts": 1789549244.2908766, "event": "success_checkpoint_check", "passed": true, "observed": "Credit Union Servicing Console \u2014 internal use only\nSub-Account Opened\n\nSuccess. New sub-account created for Dinakar Rao.\n\nAccount Number\tSUB-1002\nType\tyouth_savings\nBalance\t$150.00\nOpened\t2026-09-16 09:00:44\n\nBack to member profile"}
+{"ts": 1789549244.2909126, "event": "replay_succeeded", "outputs": {"account_number": "SUB-1002"}}

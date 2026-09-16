@@ -1,0 +1,16 @@
+{"ts": 1789549244.5896459, "event": "run_started", "kind": "replay", "run_id": "replay_20260916T090044_186f43"}
+{"ts": 1789549245.0761049, "event": "replay_started", "artifact_id": "cap_407d958d5d", "version": 1, "input_values": {"member_id": "99999", "account_type": "Youth Savings", "deposit": "100", "OPERATOR_USERNAME": "operator", "OPERATOR_PASSWORD": "<redacted:ec6e1c25>"}}
+{"ts": 1789549245.1166003, "event": "step_start", "step_id": "s0", "action": "type"}
+{"ts": 1789549245.1956894, "event": "step_ok", "step_id": "s0"}
+{"ts": 1789549245.1957464, "event": "step_start", "step_id": "s1", "action": "type"}
+{"ts": 1789549245.219156, "event": "step_ok", "step_id": "s1"}
+{"ts": 1789549245.219197, "event": "step_start", "step_id": "s2", "action": "click"}
+{"ts": 1789549245.2882674, "event": "checkpoint_check", "step_id": "s2", "passed": true, "observed": "http://127.0.0.1:5055/members/search"}
+{"ts": 1789549245.3047712, "event": "error_handler_matched", "handler_id": "transient_interstitial", "classification": "recoverable", "outcome_code": "TRANSIENT_INTERSTITIAL"}
+{"ts": 1789549245.3677201, "event": "recovered_continuing_next_step", "step_id": "s2", "handler_id": "transient_interstitial"}
+{"ts": 1789549245.3677733, "event": "step_start", "step_id": "s3", "action": "type"}
+{"ts": 1789549245.4089358, "event": "step_ok", "step_id": "s3"}
+{"ts": 1789549245.4089744, "event": "step_start", "step_id": "s4", "action": "click"}
+{"ts": 1789549245.4807217, "event": "checkpoint_check", "step_id": "s4", "passed": false, "observed": "http://127.0.0.1:5055/members/search"}
+{"ts": 1789549245.497419, "event": "error_handler_matched", "handler_id": "member_not_found", "classification": "business_outcome", "outcome_code": "MEMBER_NOT_FOUND"}
+{"ts": 1789549245.5491283, "event": "screenshot_captured", "label": "business_outcome_MEMBER_NOT_FOUND", "path": "/home/claude/cua-system/evidence/replay_20260916T090044_186f43/screenshot_01_business_outcome_MEMBER_NOT_FOUND.png"}

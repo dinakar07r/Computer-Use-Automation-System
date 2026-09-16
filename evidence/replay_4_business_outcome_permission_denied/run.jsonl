@@ -1,0 +1,24 @@
+{"ts": 1789549245.8486292, "event": "run_started", "kind": "replay", "run_id": "replay_20260916T090045_7e9cf7"}
+{"ts": 1789549246.334073, "event": "replay_started", "artifact_id": "cap_407d958d5d", "version": 1, "input_values": {"member_id": "40000", "account_type": "Youth Savings", "deposit": "100", "OPERATOR_USERNAME": "operator", "OPERATOR_PASSWORD": "<redacted:ec6e1c25>"}}
+{"ts": 1789549246.369858, "event": "step_start", "step_id": "s0", "action": "type"}
+{"ts": 1789549246.4511309, "event": "step_ok", "step_id": "s0"}
+{"ts": 1789549246.4511733, "event": "step_start", "step_id": "s1", "action": "type"}
+{"ts": 1789549246.4750838, "event": "step_ok", "step_id": "s1"}
+{"ts": 1789549246.4751227, "event": "step_start", "step_id": "s2", "action": "click"}
+{"ts": 1789549246.5519435, "event": "checkpoint_check", "step_id": "s2", "passed": true, "observed": "http://127.0.0.1:5055/members/search"}
+{"ts": 1789549246.5661857, "event": "step_ok", "step_id": "s2"}
+{"ts": 1789549246.5662217, "event": "step_start", "step_id": "s3", "action": "type"}
+{"ts": 1789549246.5978742, "event": "step_ok", "step_id": "s3"}
+{"ts": 1789549246.597918, "event": "step_start", "step_id": "s4", "action": "click"}
+{"ts": 1789549246.6893477, "event": "checkpoint_check", "step_id": "s4", "passed": true, "observed": "http://127.0.0.1:5055/members/40000"}
+{"ts": 1789549246.7027187, "event": "step_ok", "step_id": "s4"}
+{"ts": 1789549246.7027614, "event": "step_start", "step_id": "s5", "action": "click"}
+{"ts": 1789549246.771467, "event": "checkpoint_check", "step_id": "s5", "passed": true, "observed": "http://127.0.0.1:5055/members/40000/subaccounts/new"}
+{"ts": 1789549246.7950501, "event": "step_ok", "step_id": "s5"}
+{"ts": 1789549246.795093, "event": "step_start", "step_id": "s6", "action": "select"}
+{"ts": 1789549246.8088598, "event": "step_ok", "step_id": "s6"}
+{"ts": 1789549246.8088992, "event": "step_start", "step_id": "s7", "action": "type"}
+{"ts": 1789549246.8370645, "event": "step_ok", "step_id": "s7"}
+{"ts": 1789549246.8371058, "event": "step_start", "step_id": "s8", "action": "click"}
+{"ts": 1789549246.929561, "event": "error_handler_matched", "handler_id": "permission_denied", "classification": "business_outcome", "outcome_code": "PERMISSION_DENIED"}
+{"ts": 1789549246.984201, "event": "screenshot_captured", "label": "business_outcome_PERMISSION_DENIED", "path": "/home/claude/cua-system/evidence/replay_20260916T090045_7e9cf7/screenshot_01_business_outcome_PERMISSION_DENIED.png"}

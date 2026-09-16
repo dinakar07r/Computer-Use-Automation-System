@@ -1,0 +1,38 @@
+{"ts": 1789549269.0052803, "event": "run_started", "kind": "replay", "run_id": "replay_20260916T090109_cd46c1"}
+{"ts": 1789549269.4879498, "event": "replay_started", "artifact_id": "cap_407d958d5d", "version": 1, "input_values": {"member_id": "55555", "account_type": "Holiday Club", "deposit": "100", "OPERATOR_USERNAME": "operator", "OPERATOR_PASSWORD": "<redacted:ec6e1c25>"}}
+{"ts": 1789549269.525381, "event": "step_start", "step_id": "s0", "action": "type"}
+{"ts": 1789549269.6150188, "event": "step_ok", "step_id": "s0"}
+{"ts": 1789549269.6150599, "event": "step_start", "step_id": "s1", "action": "type"}
+{"ts": 1789549269.6410453, "event": "step_ok", "step_id": "s1"}
+{"ts": 1789549269.641088, "event": "step_start", "step_id": "s2", "action": "click"}
+{"ts": 1789549269.721542, "event": "checkpoint_check", "step_id": "s2", "passed": true, "observed": "http://127.0.0.1:5055/members/search"}
+{"ts": 1789549269.735762, "event": "step_ok", "step_id": "s2"}
+{"ts": 1789549269.735799, "event": "step_start", "step_id": "s3", "action": "type"}
+{"ts": 1789549269.7676387, "event": "step_ok", "step_id": "s3"}
+{"ts": 1789549269.7708006, "event": "fault_injected", "kind": "session_timeout", "before_step": "s4"}
+{"ts": 1789549269.7708368, "event": "step_start", "step_id": "s4", "action": "click"}
+{"ts": 1789549269.83101, "event": "checkpoint_check", "step_id": "s4", "passed": false, "observed": "http://127.0.0.1:5055/login"}
+{"ts": 1789549269.8821597, "event": "screenshot_captured", "label": "hard_failure_s4", "path": "/home/claude/cua-system/evidence/replay_20260916T090109_cd46c1/screenshot_01_hard_failure_s4.png"}
+{"ts": 1789549269.882199, "event": "escalating_to_human", "step_id": "s4", "reason": "Checkpoint failed after step s4."}
+{"ts": 1789549269.910808, "event": "screenshot_captured", "label": "escalation_s4", "path": "/home/claude/cua-system/evidence/replay_20260916T090109_cd46c1/screenshot_02_escalation_s4.png"}
+{"ts": 1789549269.911141, "event": "waiting_for_human", "step_id": "s4"}
+{"ts": 1789549277.9136384, "event": "human_handed_back", "step_id": "s4", "human_actions": [{"ts": 1789549276.9784067, "action": "type role=textbox name=Username text=<entered>"}, {"ts": 1789549276.9920146, "action": "type role=textbox name=Password text=<entered>"}, {"ts": 1789549277.0688946, "action": "click role=button name=Log In"}, {"ts": 1789549277.1093156, "action": "type role=textbox name=Member ID text=<entered>"}]}
+{"ts": 1789549277.9137063, "event": "step_start", "step_id": "s4", "action": "click"}
+{"ts": 1789549278.0516677, "event": "checkpoint_check", "step_id": "s4", "passed": true, "observed": "http://127.0.0.1:5055/members/55555"}
+{"ts": 1789549278.0765698, "event": "step_ok", "step_id": "s4"}
+{"ts": 1789549278.0766149, "event": "step_start", "step_id": "s5", "action": "click"}
+{"ts": 1789549278.168882, "event": "checkpoint_check", "step_id": "s5", "passed": true, "observed": "http://127.0.0.1:5055/members/55555/subaccounts/new"}
+{"ts": 1789549278.184546, "event": "step_ok", "step_id": "s5"}
+{"ts": 1789549278.184587, "event": "step_start", "step_id": "s6", "action": "select"}
+{"ts": 1789549278.196812, "event": "step_ok", "step_id": "s6"}
+{"ts": 1789549278.19685, "event": "step_start", "step_id": "s7", "action": "type"}
+{"ts": 1789549278.229902, "event": "step_ok", "step_id": "s7"}
+{"ts": 1789549278.229943, "event": "step_start", "step_id": "s8", "action": "click"}
+{"ts": 1789549278.3325264, "event": "step_ok", "step_id": "s8"}
+{"ts": 1789549278.3325706, "event": "step_start", "step_id": "s9", "action": "click"}
+{"ts": 1789549278.416574, "event": "checkpoint_check", "step_id": "s9", "passed": true, "observed": "http://127.0.0.1:5055/members/55555/subaccounts/confirm"}
+{"ts": 1789549278.431663, "event": "step_ok", "step_id": "s9"}
+{"ts": 1789549278.431703, "event": "step_start", "step_id": "s10", "action": "extract"}
+{"ts": 1789549278.458857, "event": "step_ok", "step_id": "s10"}
+{"ts": 1789549278.4615524, "event": "success_checkpoint_check", "passed": true, "observed": "Credit Union Servicing Console \u2014 internal use only\nSub-Account Opened\n\nSuccess. New sub-account created for Priya Nair.\n\nAccount Number\tSUB-1001\nType\tyouth_savings\nBalance\t$100.00\nOpened\t2026-09-16 09:01:18\n\nBack to member profile"}
+{"ts": 1789549278.461612, "event": "replay_succeeded", "outputs": {"account_number": "SUB-1001"}}

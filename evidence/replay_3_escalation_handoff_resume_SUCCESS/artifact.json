@@ -1,0 +1,444 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "cap_407d958d5d",
+  "name": "open_subaccount",
+  "version": 1,
+  "description": "Log in as the operator using the credentials you've been given out of band. Then look up member 55555, open a new sub-account of type 'Youth Savings' with an initial deposit of $100, and reach the confirmation/result screen showing the new account number.",
+  "target_app_id": "legacy_bank_console",
+  "base_url": "http://127.0.0.1:5055",
+  "surface_type": "legacy_web",
+  "input_params": [
+    {
+      "name": "member_id",
+      "type": "string",
+      "required": true,
+      "description": "Member ID to open the sub-account for"
+    },
+    {
+      "name": "account_type",
+      "type": "string",
+      "required": true,
+      "description": "Sub-account type label as shown in the dropdown"
+    },
+    {
+      "name": "deposit",
+      "type": "number",
+      "required": true,
+      "description": "Initial deposit amount in USD"
+    }
+  ],
+  "output_fields": [
+    {
+      "name": "account_number",
+      "type": "string",
+      "description": "Newly created sub-account number",
+      "source_step": "s10"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "s0",
+      "action": "type",
+      "description": "log in",
+      "target": {
+        "primary": {
+          "strategy": "role",
+          "value": "Username",
+          "role": "textbox",
+          "exact": false
+        },
+        "fallbacks": [
+          {
+            "strategy": "text",
+            "value": "Username",
+            "role": null,
+            "exact": false
+          },
+          {
+            "strategy": "label",
+            "value": "Username",
+            "role": null,
+            "exact": false
+          }
+        ],
+        "robustness_note": "role+accessible-name ('textbox', 'Username') survives markup/CSS changes because it reflects rendered semantics, not structure; text-match fallback catches cases where the role is misreported by a legacy renderer."
+      },
+      "value": "{{OPERATOR_USERNAME}}",
+      "risk_level": "safe",
+      "checkpoint": null,
+      "extract_as": null,
+      "timeout_ms": 8000
+    },
+    {
+      "step_id": "s1",
+      "action": "type",
+      "description": "log in",
+      "target": {
+        "primary": {
+          "strategy": "role",
+          "value": "Password",
+          "role": "textbox",
+          "exact": false
+        },
+        "fallbacks": [
+          {
+            "strategy": "text",
+            "value": "Password",
+            "role": null,
+            "exact": false
+          },
+          {
+            "strategy": "label",
+            "value": "Password",
+            "role": null,
+            "exact": false
+          }
+        ],
+        "robustness_note": "role+accessible-name ('textbox', 'Password') survives markup/CSS changes because it reflects rendered semantics, not structure; text-match fallback catches cases where the role is misreported by a legacy renderer."
+      },
+      "value": "{{OPERATOR_PASSWORD}}",
+      "risk_level": "safe",
+      "checkpoint": null,
+      "extract_as": null,
+      "timeout_ms": 8000
+    },
+    {
+      "step_id": "s2",
+      "action": "click",
+      "description": "submit login",
+      "target": {
+        "primary": {
+          "strategy": "role",
+          "value": "Log In",
+          "role": "button",
+          "exact": false
+        },
+        "fallbacks": [
+          {
+            "strategy": "text",
+            "value": "Log In",
+            "role": null,
+            "exact": false
+          }
+        ],
+        "robustness_note": "role+accessible-name ('button', 'Log In') survives markup/CSS changes because it reflects rendered semantics, not structure; text-match fallback catches cases where the role is misreported by a legacy renderer."
+      },
+      "value": null,
+      "risk_level": "safe",
+      "checkpoint": {
+        "kind": "url_contains",
+        "value": "127.0.0.1:5055/members/search",
+        "role": null
+      },
+      "extract_as": null,
+      "timeout_ms": 8000
+    },
+    {
+      "step_id": "s3",
+      "action": "type",
+      "description": "search member",
+      "target": {
+        "primary": {
+          "strategy": "role",
+          "value": "Member ID",
+          "role": "textbox",
+          "exact": false
+        },
+        "fallbacks": [
+          {
+            "strategy": "text",
+            "value": "Member ID",
+            "role": null,
+            "exact": false
+          },
+          {
+            "strategy": "label",
+            "value": "Member ID",
+            "role": null,
+            "exact": false
+          }
+        ],
+        "robustness_note": "role+accessible-name ('textbox', 'Member ID') survives markup/CSS changes because it reflects rendered semantics, not structure; text-match fallback catches cases where the role is misreported by a legacy renderer."
+      },
+      "value": "{{member_id}}",
+      "risk_level": "safe",
+      "checkpoint": null,
+      "extract_as": null,
+      "timeout_ms": 8000
+    },
+    {
+      "step_id": "s4",
+      "action": "click",
+      "description": "submit search",
+      "target": {
+        "primary": {
+          "strategy": "role",
+          "value": "Search",
+          "role": "button",
+          "exact": false
+        },
+        "fallbacks": [
+          {
+            "strategy": "text",
+            "value": "Search",
+            "role": null,
+            "exact": false
+          }
+        ],
+        "robustness_note": "role+accessible-name ('button', 'Search') survives markup/CSS changes because it reflects rendered semantics, not structure; text-match fallback catches cases where the role is misreported by a legacy renderer."
+      },
+      "value": null,
+      "risk_level": "safe",
+      "checkpoint": {
+        "kind": "url_contains",
+        "value": "127.0.0.1:5055/members/{{member_id}}",
+        "role": null
+      },
+      "extract_as": null,
+      "timeout_ms": 8000
+    },
+    {
+      "step_id": "s5",
+      "action": "click",
+      "description": "start subaccount flow",
+      "target": {
+        "primary": {
+          "strategy": "role",
+          "value": "Open a new sub-account",
+          "role": "link",
+          "exact": false
+        },
+        "fallbacks": [
+          {
+            "strategy": "text",
+            "value": "Open a new sub-account",
+            "role": null,
+            "exact": false
+          }
+        ],
+        "robustness_note": "role+accessible-name ('link', 'Open a new sub-account') survives markup/CSS changes because it reflects rendered semantics, not structure; text-match fallback catches cases where the role is misreported by a legacy renderer."
+      },
+      "value": null,
+      "risk_level": "safe",
+      "checkpoint": {
+        "kind": "url_contains",
+        "value": "127.0.0.1:5055/members/{{member_id}}/subaccounts/new",
+        "role": null
+      },
+      "extract_as": null,
+      "timeout_ms": 8000
+    },
+    {
+      "step_id": "s6",
+      "action": "select",
+      "description": "choose type",
+      "target": {
+        "primary": {
+          "strategy": "css",
+          "value": "select",
+          "role": null,
+          "exact": false
+        },
+        "fallbacks": [
+          {
+            "strategy": "text",
+            "value": "Account Type",
+            "role": null,
+            "exact": false
+          }
+        ],
+        "robustness_note": "role+accessible-name ('combobox', 'Account Type') survives markup/CSS changes because it reflects rendered semantics, not structure; text-match fallback catches cases where the role is misreported by a legacy renderer."
+      },
+      "value": "Youth Savings",
+      "risk_level": "safe",
+      "checkpoint": null,
+      "extract_as": null,
+      "timeout_ms": 8000
+    },
+    {
+      "step_id": "s7",
+      "action": "type",
+      "description": "enter deposit",
+      "target": {
+        "primary": {
+          "strategy": "role",
+          "value": "Initial Deposit ($)",
+          "role": "textbox",
+          "exact": false
+        },
+        "fallbacks": [
+          {
+            "strategy": "text",
+            "value": "Initial Deposit ($)",
+            "role": null,
+            "exact": false
+          },
+          {
+            "strategy": "label",
+            "value": "Initial Deposit ($)",
+            "role": null,
+            "exact": false
+          }
+        ],
+        "robustness_note": "role+accessible-name ('textbox', 'Initial Deposit ($)') survives markup/CSS changes because it reflects rendered semantics, not structure; text-match fallback catches cases where the role is misreported by a legacy renderer."
+      },
+      "value": "{{deposit}}",
+      "risk_level": "safe",
+      "checkpoint": null,
+      "extract_as": null,
+      "timeout_ms": 8000
+    },
+    {
+      "step_id": "s8",
+      "action": "click",
+      "description": "go to confirm screen",
+      "target": {
+        "primary": {
+          "strategy": "role",
+          "value": "Continue",
+          "role": "button",
+          "exact": false
+        },
+        "fallbacks": [
+          {
+            "strategy": "text",
+            "value": "Continue",
+            "role": null,
+            "exact": false
+          }
+        ],
+        "robustness_note": "role+accessible-name ('button', 'Continue') survives markup/CSS changes because it reflects rendered semantics, not structure; text-match fallback catches cases where the role is misreported by a legacy renderer."
+      },
+      "value": null,
+      "risk_level": "safe",
+      "checkpoint": null,
+      "extract_as": null,
+      "timeout_ms": 8000
+    },
+    {
+      "step_id": "s9",
+      "action": "click",
+      "description": "confirm",
+      "target": {
+        "primary": {
+          "strategy": "role",
+          "value": "Confirm and Open Account",
+          "role": "button",
+          "exact": false
+        },
+        "fallbacks": [
+          {
+            "strategy": "text",
+            "value": "Confirm and Open Account",
+            "role": null,
+            "exact": false
+          }
+        ],
+        "robustness_note": "role+accessible-name ('button', 'Confirm and Open Account') survives markup/CSS changes because it reflects rendered semantics, not structure; text-match fallback catches cases where the role is misreported by a legacy renderer."
+      },
+      "value": null,
+      "risk_level": "risky",
+      "checkpoint": {
+        "kind": "url_contains",
+        "value": "127.0.0.1:5055/members/{{member_id}}/subaccounts/confirm",
+        "role": null
+      },
+      "extract_as": null,
+      "timeout_ms": 8000
+    },
+    {
+      "step_id": "s10",
+      "action": "extract",
+      "description": "capture new account number",
+      "target": {
+        "primary": {
+          "strategy": "row_label",
+          "value": "Account Number",
+          "role": null,
+          "exact": false
+        },
+        "fallbacks": [],
+        "robustness_note": "table row identified by its label cell text ('Account Number'); reads the last cell in that row. Survives column/CSS changes; breaks only if the label text itself is reworded, which a human would also be confused by."
+      },
+      "value": null,
+      "risk_level": "safe",
+      "checkpoint": null,
+      "extract_as": "account_number",
+      "timeout_ms": 8000
+    }
+  ],
+  "success_checkpoint": {
+    "kind": "text_contains",
+    "value": "Sub-Account Opened",
+    "role": null
+  },
+  "error_handlers": [
+    {
+      "handler_id": "member_not_found",
+      "match_kind": "text_present",
+      "match_value": "No member found",
+      "classification": "business_outcome",
+      "outcome_code": "MEMBER_NOT_FOUND",
+      "message_template": "No member found with the given ID.",
+      "recovery_action": null,
+      "max_recovery_attempts": 1
+    },
+    {
+      "handler_id": "permission_denied",
+      "match_kind": "text_present",
+      "match_value": "PERMISSION_DENIED",
+      "classification": "business_outcome",
+      "outcome_code": "PERMISSION_DENIED",
+      "message_template": "The member's account does not permit this action (e.g. frozen).",
+      "recovery_action": null,
+      "max_recovery_attempts": 1
+    },
+    {
+      "handler_id": "validation_error",
+      "match_kind": "text_present",
+      "match_value": "VALIDATION_ERROR",
+      "classification": "business_outcome",
+      "outcome_code": "VALIDATION_ERROR",
+      "message_template": "The submitted input failed a business validation rule.",
+      "recovery_action": null,
+      "max_recovery_attempts": 1
+    },
+    {
+      "handler_id": "transient_interstitial",
+      "match_kind": "text_present",
+      "match_value": "processing your request",
+      "classification": "recoverable",
+      "outcome_code": "TRANSIENT_INTERSTITIAL",
+      "message_template": "Transient processing interstitial shown; dismissed and retried.",
+      "recovery_action": "dismiss_and_retry",
+      "max_recovery_attempts": 2
+    }
+  ],
+  "allowlist_scope": {
+    "allowed_domains": [
+      "127.0.0.1"
+    ],
+    "allowed_url_prefixes": [
+      "http://127.0.0.1:5055"
+    ],
+    "allowed_action_types": [
+      "navigate",
+      "click",
+      "type",
+      "select",
+      "wait_for",
+      "extract",
+      "assert",
+      "dismiss_interstitial"
+    ]
+  },
+  "approval_state": "approved",
+  "metadata": {
+    "discovery_run_id": "discovery_20260916T090030_a8c5a6",
+    "discovery_model": "scripted-test",
+    "created_at": 1789549231.8514292,
+    "tags": [
+      "legacy_bank_console"
+    ]
+  }
+}

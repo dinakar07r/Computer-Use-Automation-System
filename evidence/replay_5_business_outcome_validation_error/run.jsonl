@@ -1,0 +1,25 @@
+{"ts": 1789549247.2742615, "event": "run_started", "kind": "replay", "run_id": "replay_20260916T090047_bec863"}
+{"ts": 1789549247.7953303, "event": "replay_started", "artifact_id": "cap_407d958d5d", "version": 1, "input_values": {"member_id": "12345", "account_type": "Youth Savings", "deposit": "5", "OPERATOR_USERNAME": "operator", "OPERATOR_PASSWORD": "<redacted:ec6e1c25>"}}
+{"ts": 1789549247.8373523, "event": "step_start", "step_id": "s0", "action": "type"}
+{"ts": 1789549247.9251404, "event": "step_ok", "step_id": "s0"}
+{"ts": 1789549247.9251897, "event": "step_start", "step_id": "s1", "action": "type"}
+{"ts": 1789549247.9488719, "event": "step_ok", "step_id": "s1"}
+{"ts": 1789549247.948915, "event": "step_start", "step_id": "s2", "action": "click"}
+{"ts": 1789549248.0409648, "event": "checkpoint_check", "step_id": "s2", "passed": true, "observed": "http://127.0.0.1:5055/members/search"}
+{"ts": 1789549248.0549903, "event": "error_handler_matched", "handler_id": "transient_interstitial", "classification": "recoverable", "outcome_code": "TRANSIENT_INTERSTITIAL"}
+{"ts": 1789549248.1194367, "event": "recovered_continuing_next_step", "step_id": "s2", "handler_id": "transient_interstitial"}
+{"ts": 1789549248.1194787, "event": "step_start", "step_id": "s3", "action": "type"}
+{"ts": 1789549248.1622236, "event": "step_ok", "step_id": "s3"}
+{"ts": 1789549248.1622636, "event": "step_start", "step_id": "s4", "action": "click"}
+{"ts": 1789549248.2543583, "event": "checkpoint_check", "step_id": "s4", "passed": true, "observed": "http://127.0.0.1:5055/members/12345"}
+{"ts": 1789549248.2827296, "event": "step_ok", "step_id": "s4"}
+{"ts": 1789549248.282775, "event": "step_start", "step_id": "s5", "action": "click"}
+{"ts": 1789549248.3722181, "event": "checkpoint_check", "step_id": "s5", "passed": true, "observed": "http://127.0.0.1:5055/members/12345/subaccounts/new"}
+{"ts": 1789549248.3889356, "event": "step_ok", "step_id": "s5"}
+{"ts": 1789549248.3889782, "event": "step_start", "step_id": "s6", "action": "select"}
+{"ts": 1789549248.4000618, "event": "step_ok", "step_id": "s6"}
+{"ts": 1789549248.4000998, "event": "step_start", "step_id": "s7", "action": "type"}
+{"ts": 1789549248.430628, "event": "step_ok", "step_id": "s7"}
+{"ts": 1789549248.4306781, "event": "step_start", "step_id": "s8", "action": "click"}
+{"ts": 1789549248.529639, "event": "error_handler_matched", "handler_id": "validation_error", "classification": "business_outcome", "outcome_code": "VALIDATION_ERROR"}
+{"ts": 1789549248.5874035, "event": "screenshot_captured", "label": "business_outcome_VALIDATION_ERROR", "path": "/home/claude/cua-system/evidence/replay_20260916T090047_bec863/screenshot_01_business_outcome_VALIDATION_ERROR.png"}

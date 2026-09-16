@@ -1,0 +1,32 @@
+{
+  "owner": "automation",
+  "pending_request": {
+    "run_id": "replay_20260916T090109_cd46c1",
+    "capability_name": "open_subaccount",
+    "goal": "Log in as the operator using the credentials you've been given out of band. Then look up member 55555, open a new sub-account of type 'Youth Savings' with an initial deposit of $100, and reach the confirmation/result screen showing the new account number.",
+    "step_context": "step s4: submit search",
+    "reason": "Checkpoint failed after step s4.",
+    "screenshot_path": "/home/claude/cua-system/evidence/replay_20260916T090109_cd46c1/screenshot_02_escalation_s4.png",
+    "cdp_endpoint": "http://127.0.0.1:9333",
+    "created_at": 1789549269.9108522
+  },
+  "resume_signal": true,
+  "human_actions": [
+    {
+      "ts": 1789549276.9784067,
+      "action": "type role=textbox name=Username text=<entered>"
+    },
+    {
+      "ts": 1789549276.9920146,
+      "action": "type role=textbox name=Password text=<entered>"
+    },
+    {
+      "ts": 1789549277.0688946,
+      "action": "click role=button name=Log In"
+    },
+    {
+      "ts": 1789549277.1093156,
+      "action": "type role=textbox name=Member ID text=<entered>"
+    }
+  ]
+}
