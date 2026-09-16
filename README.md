@@ -144,6 +144,14 @@ python -m src.cua.cli replay --artifact <artifact.json> \
 # -> {"status": "SUCCESS", ...} after transparently dismissing the interstitial
 ```
 
+## Before Running
+ 
+**Run the real discovery command yourself**, with your own `ANTHROPIC_API_KEY`
+(see the "Demo path" section above for the exact command). This produces the actual
+`evidence/discovery_<timestamp>_<hash>/` directory with `artifact.json` and
+`run.jsonl` from a genuine model-driven session — not the `scripted-test` stand-in.
+
+
 ## Notes
 
 - `OPERATOR_USERNAME` / `OPERATOR_PASSWORD` are resolved from environment variables at
