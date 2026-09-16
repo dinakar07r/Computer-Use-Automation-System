@@ -1,0 +1,6 @@
+flask
+playwright
+anthropic
+pydantic>=2
+pyyaml
+pytest
