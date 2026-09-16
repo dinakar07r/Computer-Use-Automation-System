@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Sub-Account Opened</h2>
+<p>Success. New sub-account created for {{ member.name }}.</p>
+<table>
+<tr><th>Account Number</th><td>{{ record.account_number }}</td></tr>
+<tr><th>Type</th><td>{{ record.type }}</td></tr>
+<tr><th>Balance</th><td>${{ "%.2f"|format(record.balance) }}</td></tr>
+<tr><th>Opened</th><td>{{ record.opened_at }}</td></tr>
+</table>
+<p><a href="/members/{{ member.id }}">Back to member profile</a></p>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Open New Sub-Account for {{ member.name }} ({{ member.id }})</h2>
+{% if error %}<div class="errorbox">{{ error }}</div>{% endif %}
+<form method="post">
+<table>
+<tr><td><label for="account_type">Account Type</label></td><td>
+<select name="account_type" id="account_type">
+<option value="youth_savings">Youth Savings</option>
+<option value="holiday_club">Holiday Club</option>
+<option value="secondary_savings">Secondary Savings</option>
+</select>
+</td></tr>
+<tr><td><label for="initial_deposit">Initial Deposit ($)</label></td><td><input type="text" name="initial_deposit" id="initial_deposit"></td></tr>
+</table>
+<br>
+<button type="submit">Continue</button>
+</form>
+<p><a href="/members/{{ member.id }}">Cancel</a></p>
+{% endblock %}

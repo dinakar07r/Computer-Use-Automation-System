@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Member Search</h2>
+{% if error %}<div class="errorbox">{{ error }}</div>{% endif %}
+<form method="post" action="/members/search">
+<label for="member_id">Member ID</label>
+<input type="text" name="member_id" id="member_id">
+<button type="submit">Search</button>
+</form>
+<p><a href="/logout">Log out</a></p>
+{% endblock %}

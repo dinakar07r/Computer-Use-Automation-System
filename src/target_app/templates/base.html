@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head><title>{% block title %}CU Servicing Console{% endblock %}</title>
+<style>
+body { font-family: Tahoma, Geneva, sans-serif; font-size: 13px; background:#d4d0c8; margin:0; }
+.titlebar { background:#003366; color:white; padding:6px 12px; font-weight:bold; }
+.content { padding: 16px; background: white; margin: 10px; border: 1px solid #888; }
+table { border-collapse: collapse; }
+td, th { border: 1px solid #999; padding: 4px 10px; text-align:left; }
+.errorbox { background:#ffe0e0; border:1px solid #cc0000; padding:8px; margin-bottom:10px; }
+.interstitial { background:#fff8dc; border:1px solid #cc9900; padding:20px; text-align:center; }
+</style>
+</head>
+<body>
+<div class="titlebar">Credit Union Servicing Console &mdash; internal use only</div>
+<div class="content">
+{% block body %}{% endblock %}
+</div>
+</body>
+</html>

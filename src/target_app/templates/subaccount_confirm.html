@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>Confirm New Sub-Account</h2>
+<p>Please review before submitting. This action creates a new account record.</p>
+<table>
+<tr><th>Member</th><td>{{ member.name }} ({{ member.id }})</td></tr>
+<tr><th>Account Type</th><td>{{ account_type }}</td></tr>
+<tr><th>Initial Deposit</th><td>${{ "%.2f"|format(deposit) }}</td></tr>
+</table>
+<br>
+<form method="post" action="/members/{{ member.id }}/subaccounts/confirm">
+<input type="hidden" name="account_type" value="{{ account_type }}">
+<input type="hidden" name="deposit" value="{{ deposit }}">
+<button type="submit">Confirm and Open Account</button>
+</form>
+<p><a href="/members/{{ member.id }}/subaccounts/new">Back</a></p>
+{% endblock %}
