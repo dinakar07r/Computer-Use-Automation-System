@@ -1,0 +1,16 @@
+# Guardrail allowlist (assignment Section 3.4).
+# The agent/replay engine may only navigate to, or act within, these
+# domains/prefixes, and only using these action types.
+allowed_domains:
+  - 127.0.0.1
+allowed_url_prefixes:
+  - http://127.0.0.1:5055
+allowed_action_types:
+  - navigate
+  - click
+  - type
+  - select
+  - wait_for
+  - extract
+  - assert
+  - dismiss_interstitial
